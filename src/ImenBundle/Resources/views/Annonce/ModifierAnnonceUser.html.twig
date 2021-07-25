@@ -1,0 +1,15 @@
+{% extends "shop.html.twig" %}
+{% block content %}
+
+    <a href="{{ path('imen_afficherMesAnnonces')}}" >Back</a>
+
+    <h1 align="center"> Update Announce </h1>
+    {{ form_start(form) }}
+    <table align="center">
+        <td>{{ form_widget (form.nomAnnonce) }}</td></br>
+        <td>{{ form_widget (form.descriptionAnnonce) }}</td></br>
+        <td><input type="submit" value="Update"/></td></br>
+    </table>
+    {{ form_end(form) }}
+
+    {% endblock %}

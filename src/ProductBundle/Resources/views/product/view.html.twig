@@ -1,0 +1,65 @@
+{% extends 'shop.html.twig' %}
+
+
+{% block content %}
+
+
+
+  <!-- Products Section -->
+  <section id="projects" class="projects-section bg-light">
+
+
+  
+    <div class="container">
+
+<a href="/show-products"><button type="button" class="btn btn-dark">Go to shop!</button></a>
+      </br>
+      </br>
+      </br>
+
+     
+  <div class="card" style="width: 30rem;">
+    <img class="card-img-top" src="{{ product.photo }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <p style="font-size: 20px; color: red;" class="card-text">{{ product.price }} $</p>
+    
+     <a data-toggle="modal" data-target="#myModal"><button type="button" class="btn btn-danger">BUY NOW!!</button></a>
+    </div>
+  </div>
+   
+
+    </div>
+  </section>
+ 
+ 
+  <!-- Modal -->
+<div id="myModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+
+    <h1>Product added to orders</h1>
+
+
+
+      </div>
+      <div class="modal-footer">
+       
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+{% endblock %}

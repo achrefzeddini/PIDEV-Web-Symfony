@@ -1,0 +1,77 @@
+{% extends "shop.html.twig" %}
+{% block content %}
+<section id="projects" class="projects-section bg-light">
+    <h1>My Events</h1>
+    <div class="container">
+        <div class="row">
+
+            {% for e in evts %}
+
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-box">
+                            <h4 class="card-title pb-3 mbr-fonts-style display-7">
+                                {{ e.titre }}
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Localsation : {{ e.localisation }}
+                                <br>
+                                Places disponibles : {{ e.nbrplaces }}
+                                <br>
+                                {{ e.hdebut }}h - {{ e.hfin }}
+                                <br>
+                                prix : {{ e.prix}}
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+    <br>
+    <a href="{{ path('front_pdf') }}">Download Events in pdf</a>
+    <br>
+    <br>
+    {% include '@FullCalendar/Calendar/calendar.html.twig' %}
+
+{% endblock %}
+</section>
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/fullcalendar/css/fullcalendar/fullcalendar.min.css') }}" />
+{% endblock %}
+
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#calendar-holder').fullCalendar({
+                header: {
+                    left: 'prev, next',
+                    center: 'title',
+                    right: 'month, basicWeek, basicDay,'
+                },
+                lazyFetching: true,
+                timeFormat: {
+                    agenda: 'h:mmt',
+                    '': 'h:mmt'
+                },
+                eventSources: [
+                    {
+                        url: "{{path('ancarebeca_full_calendar_load')}}",
+                        type: 'POST',
+                        data: {},
+                        error: function () {}
+                    }
+                ]
+            });
+        });
+
+    </script>
+{% endblock %}

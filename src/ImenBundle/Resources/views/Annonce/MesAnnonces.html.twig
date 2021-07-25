@@ -1,0 +1,43 @@
+{% extends "shop.html.twig" %}
+{% block content %}
+    <div  align="center">
+
+        <h5 align="left"><a href="{{ path('imen_afficherAnnonce')}}" >Back</a></h5>
+        <h1>My Announcements </h1>
+    </div>
+
+{#{% for u in user %}  #}
+        {% for a in annonce %}
+
+        <section class="contact-section bg-gradient-light">
+            <!--  -->
+            <div class="container">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+
+                        <!-- <i class="fas fa-map-marked-alt text-primary mb-2"></i> -->
+                        <!-- <h4 class="text-uppercase m-0">Address</h4> -->
+                        <p class="small text-black-50" align="right">{{a.dateannonce|date("d/m/Y")}}</p>
+                        <div class="featured-text text-center text-lg-left">
+                            <h4 align="center">{{a.nomannonce}}</h4>
+                        </div>
+
+                        <hr class="my-2">
+                        {#<p class="text-dark mb-2">{{a.id}}</p>#}
+                        <p class="text-dark mb-2">{{a.descriptionannonce}}</p>
+
+                        <a href="{{ path('imen_modifierAnnonceUser',{'id': a.id }) }}" class=" btn-light btn-sm  text-black-50 ">Update</a>
+                        <a href="{{ path('imen_supprimerAnnonceUser',{'id': a.id }) }}" class=" btn-light btn-sm  text-black-50 ">Delete</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+   {# {% endfor %}#}
+                {% endfor %}
+
+
+{% endblock %}

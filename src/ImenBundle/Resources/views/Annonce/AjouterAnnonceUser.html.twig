@@ -1,0 +1,29 @@
+{% extends "shop.html.twig" %}
+{% block content %}
+
+
+
+    {{ form_start(form) }}
+    <a href="{{ path('imen_afficherMesAnnonces')}}" >Back</a>
+    <h2 class="text-white mb-5" align="center"> Add Announce .. </h2>
+    <div align="center">
+        <div>
+            {{ form_widget (form.nomAnnonce , { 'attr': {'class' : "form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" }}) }}
+        </div>
+        <br>
+        <div>
+            {{ form_widget (form.descriptionAnnonce , { 'attr': {'class' : "form-control flex-fill " }}) }}
+        </div>
+        <br>
+        <div class="col-sm-5 mb-3 " >
+            <input type="submit" class="btn btn-secondary btn-user btn-block" value="Add Announce"/>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+
+
+
+
+
+{% endblock %}

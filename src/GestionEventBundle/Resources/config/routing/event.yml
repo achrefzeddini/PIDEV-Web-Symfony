@@ -1,0 +1,24 @@
+event_index:
+    path:     /showevents
+    defaults: { _controller: "GestionEventBundle:Event:index" }
+    methods:  GET
+
+event_show:
+    path:     /{idevent}/show
+    defaults: { _controller: "GestionEventBundle:Event:show" }
+    methods:  GET
+
+event_new:
+    path:     /newevent
+    defaults: { _controller: "GestionEventBundle:Event:new" }
+    methods:  [GET, POST]
+
+event_edit:
+    path:     /{idevent}/editevent
+    defaults: { _controller: "GestionEventBundle:Event:edit" }
+    methods:  [GET, POST]
+
+event_delete:
+    path:     /{idevent}/deleteevent
+    defaults: { _controller: "GestionEventBundle:Event:delete" }
+    methods:  DELETE

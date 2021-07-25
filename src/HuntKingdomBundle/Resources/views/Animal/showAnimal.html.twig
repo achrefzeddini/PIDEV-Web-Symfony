@@ -1,0 +1,77 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+
+<h2> List of Animals </h2>
+    <div id="div_histogram" >
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        {{ gc_language('fr') }}
+
+        {{ gc_draw(piechart, 'div_histogram') }}
+    </script>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="col-sm-3 mb-3 mb-sm-0" >
+            <br>
+            <a  class="btn btn-success btn-user btn-block btn-lg" href="{{ path("hunt_kingdom_ajoutAnimal")}}" > Add Animal </a>  </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th> Reference </th>
+                        <th> Race </th>
+                        <th> Season </th>
+                        <th> Place </th>
+                        <th> Image </th>
+                        <th> Number Of Hunts </th>
+                        <th> Info about the season </th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th> Reference </th>
+                        <th> Race </th>
+                        <th> Season </th>
+                        <th> Place </th>
+                        <th> Image </th>
+                        <th> Number Of Hunts </th>
+                        <th> Info about the season </th>
+
+                    </tr>
+                    </tfoot>
+
+                    {% for a in animal %}
+                        <tbody>
+                        <tr>
+
+                            <td> {{ a.idA }} </td>
+                            <td> {{ a.race }} </td>
+                            <td> {{ a.saison }} </td>
+                            <td> {{ a.place }} </td>
+                            <td> <img src="{{ a.image }}" height="60" width="70"> </td>
+                            <td> {{ a.hunted }} </td>
+                            <td> {{ a.season.description }}
+                                <div align="right">
+                             <a href="{{ path("hunt_kingdom_updateAnimal",{'id':a.id })}}" class="btn btn-info btn-circle btn-sm">
+                                    <i class="fas fa-info-circle"></i> </a>
+                             <a href="{{ path("hunt_kingdom_deleteAnimal",{'id':a.id })}}" class="btn btn-danger btn-circle btn-sm">
+                                    <i class="fas fa-trash"></i> </a>   </div> </td>
+
+
+                        </tr>
+                   </tbody>
+
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+

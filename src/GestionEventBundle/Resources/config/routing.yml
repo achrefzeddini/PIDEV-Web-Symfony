@@ -1,0 +1,108 @@
+event_index:
+    path:     /showevents
+    defaults: { _controller: "GestionEventBundle:Event:index" }
+    methods:  GET
+
+event_show:
+    path:     /{idevent}/show
+    defaults: { _controller: "GestionEventBundle:Event:show" }
+    methods:  GET
+
+event_new:
+    path:     /newevent
+    defaults: { _controller: "GestionEventBundle:Event:new" }
+    methods:  [GET, POST]
+
+event_edit:
+    path:     /{idevent}/editevent
+    defaults: { _controller: "GestionEventBundle:Event:edit" }
+    methods:  [GET, POST]
+
+event_delete:
+    path:     /{idevent}/deleteevent
+    defaults: { _controller: "GestionEventBundle:Event:delete" }
+    methods:  DELETE
+
+sponsor_index:
+    path:     /showsponsers
+    defaults: { _controller: "GestionEventBundle:Sponsor:index" }
+    methods:  GET
+
+sponsor_show:
+    path:     /{idsponsor}/show
+    defaults: { _controller: "GestionEventBundle:Sponsor:show" }
+    methods:  GET
+
+sponsor_new:
+    path:     /new
+    defaults: { _controller: "GestionEventBundle:Sponsor:new" }
+    methods:  [GET, POST]
+
+sponsor_edit:
+    path:     /{idsponsor}/edit
+    defaults: { _controller: "GestionEventBundle:Sponsor:edit" }
+    methods:  [GET, POST]
+
+sponsor_delete:
+    path:     /{idsponsor}/delete
+    defaults: { _controller: "GestionEventBundle:Sponsor:delete" }
+    methods:  DELETE
+
+reservation_index:
+    path:     /showreservation
+    defaults: { _controller: "GestionEventBundle:Reservation:index" }
+    methods:  GET
+
+reservation_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionEventBundle:Reservation:show" }
+    methods:  GET
+
+reservation_new:
+    path:     /new
+    defaults: { _controller: "GestionEventBundle:Reservation:new" }
+    methods:  [GET, POST]
+
+reservation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionEventBundle:Reservation:edit" }
+    methods:  [GET, POST]
+
+reservation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionEventBundle:Reservation:delete" }
+    methods:  DELETE
+
+
+gestion_event_homepage:
+    path:     /
+    defaults: { _controller: GestionEventBundle:Default:index }
+
+front_events:
+    path:     /front/events
+    defaults: { _controller: GestionEventBundle:Front:events }
+
+front_reserver:
+    path:     /front/reserver/{idEvent}
+    defaults: { _controller: GestionEventBundle:Front:reserver }
+
+front_my_events:
+    path:     /front/my-events
+    defaults: { _controller: GestionEventBundle:Front:myEvents }
+
+
+front_pdf:
+    path:     /front/pdf
+    defaults: { _controller: GestionEventBundle:Front:pdf }
+
+wsGetEvents:
+    path:     /wsGetEvents
+    defaults: { _controller: GestionEventBundle:Default:wsGetEvents }
+
+wsGetMyEvents:
+    path:     /wsGetMyEvents
+    defaults: { _controller: GestionEventBundle:Default:wsGetMyEvents }
+
+reserver:
+    path:     /reserver
+    defaults: { _controller: GestionEventBundle:Default:reserver }

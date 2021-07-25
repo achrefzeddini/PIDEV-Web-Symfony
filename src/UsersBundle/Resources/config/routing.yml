@@ -1,0 +1,15 @@
+users_user:
+    resource: "@UsersBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+users_homepage:
+    path:     /
+    defaults: { _controller: UsersBundle:User:index }
+
+mygroup:
+    path:     /mygroups
+    defaults: { _controller: UsersBundle:User:_show }
+
+BanUser:
+    path:     /banUser/{id}
+    defaults: { _controller: UsersBundle:User:ban }

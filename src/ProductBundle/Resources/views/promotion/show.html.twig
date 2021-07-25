@@ -1,0 +1,48 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+ <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+						<h2>Manage <b>All promotions</b></h2>
+					</div>
+					<div class="col-sm-6">
+						<a href="/create-promotion"><button type="button" class="btn btn-dark">ADD NEW PROMOTION</button></a>
+												
+					</div>
+                </div>
+            </div>
+			
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+						
+                        <th>Name</th>
+                        <th>Percentage</th>
+						<th>Price</th>
+                        <th>Description</th>
+                        <th>Number of days</th>
+                    </tr>
+                </thead>
+                <tbody>
+                 {% for promotion in promotions %}
+                    <tr>
+					
+                        <td>{{ promotion.name }}</td>
+                        <td>{{ promotion.percentage }}</td>
+						            <td>{{ promotion.description }}</td>
+                        <td>{{ promotion.nbdays }}</td>
+                        <td>
+                            <a href="/delete-promotion/{{ promotion.id }}">Delete</a>
+                           
+                        </td>
+                    </tr>
+                   {% endfor %}
+                </tbody>
+            </table>
+			
+        </div>
+    </div>
+	
+{% endblock %}

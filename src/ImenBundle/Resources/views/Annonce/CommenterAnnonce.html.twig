@@ -1,0 +1,99 @@
+
+{% extends "shop.html.twig" %}
+{% block content %}
+
+
+
+
+
+
+    <section class="contact-section bg-gradient-light">
+        <!--  -->
+        <div class="container">
+            <div class="card py-4 h-100">
+                <div class="card-body text-center">
+
+
+                    <div align="left">
+                        <a href="{{ path('imen_afficherAnnonce')}}" >Back</a>
+                    </div>
+
+
+                    {# détails annonce #}
+                    {% for u in user %}
+                        {% for a in annonce %}
+                            <br>
+                            <p align="right"> Written by : {{u.username}} at {{a.dateannonce|date("d/m/Y")}} </p>
+                            <h1 align="center">{{a.nomannonce}}</h1>
+                            <p>{{a.descriptionannonce}}</p>
+
+                        {% endfor %}
+                    {% endfor %}
+                    {# détails annonce #}
+
+
+
+
+                    {# bouton ajout commentaire #}
+                    {%  for a in annonce %}
+                        <div align="center">
+                            <a href="{{ path('imen_ajouterCommentaireUser',{'id': a.id }) }}" >Add comment</a>
+                        </div><br>
+                    {% endfor %}
+                    {# bouton ajout commentaire #}
+
+                    {# table commentaires #}
+                    <table border="2">
+                        {# test sur le user id et commenttaire.user id #}
+                        {% for u in user %}
+                            {% for a in annonce  %}
+                                {% for c in a.getCommentaires() %}
+                                    <tr >
+
+                                        <td>{{ c.champCommentaire }}</td>
+                                        <td>{{ c.dateCommentaire|date("d/m/Y") }}</td>
+                                    </tr>
+                                    {% if  u==c.getUser() %}
+                                        <tr>
+                                            <td>{{ c.champCommentaire }}</td>
+                                            <td>{{ c.dateCommentaire|date("d/m/Y") }}</td>
+                                            <td><button><a href="{{ path('imen_modifierCommentaireUser',{'id': c.id }) }} }" >Update</a></button></td>
+                                            <td><button><a href="{{ path('imen_supprimerCommentaireUser',{'id': c.id }) }}" >Delete</a></button></td>
+                                        </tr>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        {% endfor %}
+                        {# fin test #}
+                    </table>
+                    {# table commentaires #}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+

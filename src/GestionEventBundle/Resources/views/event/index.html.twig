@@ -1,0 +1,66 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Events</h1>
+                <p class="mb-4">
+                    <a href="{{ path('event_new') }}">Create a new event</a></p>
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Titre</th>
+                                    <th>Nbrplaces</th>
+                                    <th>Localisation</th>
+                                    <th>Hdebut</th>
+                                    <th>Hfin</th>
+                                    <th>Prix</th>
+                                    <th>Idevent</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for event in events %}
+                                    <tr>
+                                        <td><img src="{{ event.image }}" style="max-width: 100px; max-height: 100px;"></td>
+                                        <td><a href="{{ path('event_show', { 'idevent': event.id }) }}">{{ event.titre }}</a></td>
+                                        <td>{{ event.nbrplaces }}</td>
+                                        <td>{{ event.localisation }}</td>
+                                        <td>{{ event.hdebut }}</td>
+                                        <td>{{ event.hfin }}</td>
+                                        <td>{{ event.prix }}</td>
+                                        <td>{{ event.id }}</td>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ path('event_show', { 'idevent': event.id }) }}">show</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ path('event_edit', { 'idevent': event.id }) }}">edit</a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "shop.html.twig" %}
+{% block content %}
+<section id="Animals" class="projects-section bg-light">
+    <div class="container">
+    {% for a in animal %}
+    <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+
+        <div class="col-lg-6" >
+            <img class="img-fluid" class="center" src="{{ a.image }}" alt="" >
+        </div>
+        <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <h4 class="text-white"> {{ a.race }}</h4>
+                        <p class="mb-0 text-white-50"> {{ a.saison }}</p>
+                        <p class="mb-0 text-white-50"> {{ a.place }}</p>
+                        <p class="mb-0 text-white-50"> {{ a.hunted }}</p>
+                        <p class="mb-0 text-white-50"> {{ a.season.description }}</p>
+                        <hr class="d-none d-lg-block mb-0 ml-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+        </section>
+{% endblock %}

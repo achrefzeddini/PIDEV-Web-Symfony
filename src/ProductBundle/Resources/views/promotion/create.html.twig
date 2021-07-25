@@ -1,0 +1,59 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block content %}
+
+
+
+  <!-- Products Section -->
+  <section id="projects" class="projects-section bg-light">
+    <div class="container">
+
+<a href="/show-promotion"><button type="button" class="btn btn-dark">Back</button></a>
+
+      </br>
+      </br>
+      </br>
+
+      <h1>Create promotion:</h1>
+
+{{ form_start(form) }}
+
+<table>
+  <tbody>
+    <tr>
+      <th>name:</th>
+      <td>{{ form_widget(form.name) }}</td>
+    </tr>
+    <tr>
+      <th>percentage:</th>
+      <td>{{ form_widget(form.percentage) }}</td>
+    </tr>
+    <tr>
+      <th>description:</th>
+      <td>{{ form_widget(form.description) }}</td>
+    </tr>
+    <tr>
+      <th>number of days:</th>
+      <td>{{ form_widget(form.nbdays) }}</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>{{ form_widget(form.save) }}</td>
+    </tr>
+  </tbody>
+</table>
+
+{{ form_end(form) }}
+
+    </div>
+  </section>
+ 
+ 
+
+
+
+
+<br/>
+
+{% endblock %}

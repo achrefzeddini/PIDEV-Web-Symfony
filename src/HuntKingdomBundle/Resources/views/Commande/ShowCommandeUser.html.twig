@@ -1,0 +1,37 @@
+{% extends "shop.html.twig" %}
+{% block content %}
+    <section id="Orders" class="projects-section bg-light">
+        <div class="container">
+            {% for c in commande %}
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+
+                    <div class="col-lg-6" >
+                            <img class="img-fluid" class="center" src="{{ asset('user/img/gungun.jpg') }}" alt="" >
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white"> {{ c.produit }}</h4>
+                                    <p class="mb-0 text-white-50"> {{ c.user }}</p>
+                                    <p class="mb-0 text-white-50"> {{ c.date|date('F d, Y') }}</p>
+                                    <p class="mb-0 text-white-50"> {{ c.price }}</p> <br>
+                                    <a  class="btn btn-secondary btn-user btn-block" href="{{ path("hunt_kingdom_orderCommandeUser",{'id':c.id })}}" > Order </a>
+                                    <hr class="d-none d-lg-block mb-0 ml-0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
+
+
+
+
+
+
+

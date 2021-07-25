@@ -1,0 +1,78 @@
+hunt_kingdom_homepage:
+    path:     /
+    defaults: { _controller: HuntKingdomBundle:Default:index }
+
+    #Animal
+hunt_kingdom_ajoutAnimal:
+    path:     /ajoutAnimal
+    defaults: { _controller: HuntKingdomBundle:Animal:ajoutAnimal }
+hunt_kingdom_updateAnimal:
+        path:     /updateAnimal{id}
+        defaults: { _controller: HuntKingdomBundle:Animal:updateAnimal }
+hunt_kingdom_deleteAnimal:
+    path:     /deleteAnimal/{id}
+    defaults: { _controller: HuntKingdomBundle:Animal:deleteAnimal }
+hunt_kingdom_showAnimal:
+    path:     /showAnimal
+    defaults: { _controller: HuntKingdomBundle:Animal:showAnimal }
+hunt_kingdom_frontAnimal:
+    path:     /frontAnimal
+    defaults: { _controller: HuntKingdomBundle:Animal:frontAnimal }
+hunt_kingdom_api_all:
+    path:     /all
+    defaults: { _controller: HuntKingdomBundle:ApiAnimal:all }
+hunt_kingdom_api_ajout:
+    path:     /newanimalapi
+    defaults: { _controller: HuntKingdomBundle:ApiAnimal:new }
+hunt_Kingdom_api_update:
+    path:     /updateanimalapi
+    defaults: { _controller: HuntKingdomBundle:ApiAnimal:updateApi}
+
+    #Season
+hunt_kingdom_ajoutSeason:
+    path:     /ajoutSeason
+    defaults: { _controller: HuntKingdomBundle:Season:ajoutSeason }
+hunt_kingdom_updateSeason:
+        path:     /updateSeason{id}
+        defaults: { _controller: HuntKingdomBundle:Season:updateSeason }
+hunt_kingdom_deleteSeason:
+    path:     /deleteSeason/{id}
+    defaults: { _controller: HuntKingdomBundle:Season:deleteSeason }
+hunt_kingdom_showSeason:
+    path:     /showSeason
+    defaults: { _controller: HuntKingdomBundle:Season:showSeason }
+hunt_kingdom_frontSeason:
+    path:     /frontSeason
+    defaults: { _controller: HuntKingdomBundle:Season:frontSeason }
+hunt_kingdom_api_allseason:
+    path:     /allseason
+    defaults: { _controller: HuntKingdomBundle:ApiSeason:all }
+hunt_kingdom_api_addseason:
+    path:     /addseason
+    defaults: { _controller: HuntKingdomBundle:ApiSeason:new }
+hunt_kingdom_api_updateseason:
+    path:     /updateseason
+    defaults: { _controller: HuntKingdomBundle:ApiSeason:updateApi }
+
+    #Commande
+hunt_kingdom_showCommande:
+    path:     /showCommande
+    defaults: { _controller: HuntKingdomBundle:Commande:showCommande }
+hunt_kingdom_showCommandeUser:
+    path:     /showCommandeUser
+    defaults: { _controller: HuntKingdomBundle:Commande:showCommandeUser }
+hunt_kingdom_orderCommandeUser:
+    path:     /orderCommandeUser{id}
+    defaults: { _controller: HuntKingdomBundle:Commande:orderCommandeUser }
+hunt_kingdom_api_allcommande:
+    path:     /allcommande
+    defaults: { _controller: HuntKingdomBundle:ApiCommande:all }
+hunt_kingdom_api_updatecommande:
+    path:     /updateCommande/{id}
+    defaults: { _controller: HuntKingdomBundle:ApiCommande:updateCommande }
+hunt_kingdom_api_deletecommande:
+    path:     /deleteCommande/{id}
+    defaults: { _controller: HuntKingdomBundle:ApiCommande:deleteCommande }
+login:
+    path:   /user/login/{username}/{password}
+    defaults: { _controller: HuntKingdomBundle:Users:login }

@@ -1,0 +1,77 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+
+
+<div class="cardshadow mb-4">
+    <h1 class="h3 mb-2 text-gray-800">Annonce List </h1>
+    <div align="right" >
+        <a href="{{ path('imen_afficherCommentaires')}}">Partie commentaire</a>
+    </div>
+    <div class="col-sm-3 mb-3 mb-sm-0" >
+        <a href="{{ path('imen_ajouterAnnonce')}}" class="btn btn-light btn-icon-split">
+                        <span class="icon text-gray-600">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+            <span class="text">Add Announce</span>
+        </a>
+
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>Announce id</th>
+                    <th>Announce Name </th>
+                    <th>Announce Description</th>
+                    <th>Announce Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for a in annonce %}
+                    <tr>
+                        <td>{{a.id}}</td>
+                        <td>{{a.nomannonce}}</td>
+                        <td>{{a.descriptionannonce}}</td>
+                        <td>{{a.dateannonce|date("d/m/Y")}}
+                            <div align="right">
+                                <a href="{{ path('imen_modifierAnnonce',{'id': a.id }) }}" class="btn btn-info btn-circle btn-sm">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                                <a href="{{ path('imen_supprimerAnnonce',{'id': a.id }) }}" class="btn btn-danger btn-circle btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                    </tr>
+                {% endfor%}
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+
+
+{% endblock%}
+
+
+

@@ -1,0 +1,24 @@
+sponsor_index:
+    path:     /showsponsers
+    defaults: { _controller: "GestionEventBundle:Sponsor:index" }
+    methods:  GET
+
+sponsor_show:
+    path:     /{idsponsor}/show
+    defaults: { _controller: "GestionEventBundle:Sponsor:show" }
+    methods:  GET
+
+sponsor_new:
+    path:     /new
+    defaults: { _controller: "GestionEventBundle:Sponsor:new" }
+    methods:  [GET, POST]
+
+sponsor_edit:
+    path:     /{idsponsor}/edit
+    defaults: { _controller: "GestionEventBundle:Sponsor:edit" }
+    methods:  [GET, POST]
+
+sponsor_delete:
+    path:     /{idsponsor}/delete
+    defaults: { _controller: "GestionEventBundle:Sponsor:delete" }
+    methods:  DELETE

@@ -1,0 +1,59 @@
+{% extends 'shop.html.twig' %}
+
+
+{% block content %}
+
+
+
+  <!-- Products Section -->
+  <section id="projects" class="projects-section bg-light">
+
+
+  
+    <div class="container">
+
+<a href="/show-my-products/1"><button type="button" class="btn btn-dark">ADD YOUR OWN PRODUCT!</button></a>
+      </br>
+      </br>
+      </br>
+
+<script type="text/javascript" src="{{ asset('shop/jquery/jquery-min.js') }}"></script>
+
+<input class="form-control mr-sm-2" type="search" placeholder="Type a name" aria-label="Search" id="search">
+
+
+      <div class="card-deck">
+{% if products is not empty %}
+
+  {% for product in products %}
+  <div class="card">
+    <img class="card-img-top" src="{{ product.photo }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">{{ product.description | slice(0, 20) }}...</p>
+      <p style="font-size: 20px; color: red;" class="card-text">{{ product.price }} $</p>
+     <a href="view-product/{{ product.id }}">view</a>
+    </div>
+  </div>
+   {% endfor %}
+</div>
+
+    </div>
+  </section>
+ 
+ 
+{% else %}
+  <p>No products found.</p>
+{% endif %}
+
+<script>
+$('#search').keyup(function (){
+    $('.card').removeClass('d-none');
+    var filter = $(this).val(); // get the value of the input, which we filter on
+    $('.card-deck').find('.card .card-body h5:not(:contains("'+filter+'"))').parent().parent().addClass('d-none');
+})
+</script>
+
+<br/>
+
+{% endblock %}

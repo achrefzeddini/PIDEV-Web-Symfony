@@ -1,0 +1,19 @@
+client_show:
+    path:     /groups
+    defaults: { _controller: "UsersBundle:User:___show" }
+    methods:  GET
+
+client_join:
+    path:     /join:{idU}:{idG}
+    defaults: { _controller: "UsersBundle:User:join" }
+    methods:  GET
+
+client_leave:
+    path:     /leave:{idU}:{idG}
+    defaults: { _controller: "UsersBundle:User:leave" }
+    methods:  GET
+
+client_userIn:
+    path: /users:{id}
+    defaults: { _controller: "GroupsBundle:Groups:userIn" }
+    methods: GET

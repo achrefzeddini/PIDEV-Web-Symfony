@@ -1,0 +1,35 @@
+<style>
+th, td {
+  padding: 10px;
+}
+th {
+  text-align: right;
+}
+</style>
+
+<h1>Product Created </h1>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Title:</th>
+    <td>{{ promotion.name }}</td>
+    </tr>
+    <tr>
+      <th>percentage:</th>
+      <td>{{ promotion.percentage }}</td>
+    </tr>
+    <tr>
+      <th> description:</th>
+      <td>{{ promotion.description }}</td>
+    </tr>
+    <tr>
+      <th>number of days:</th>
+      <td>{{ promotion.nbdays }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+<a href="/show-promotions">View All</a> -
+<a href="/update-promotion/{{ promotion.id }}">Modify</a>

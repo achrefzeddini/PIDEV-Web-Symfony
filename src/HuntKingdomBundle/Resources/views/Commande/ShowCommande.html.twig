@@ -1,0 +1,46 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+<h2> List of Commands </h2>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">List Of Orders </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th> Product </th>
+                        <th> User </th>
+                        <th> Date </th>
+                        <th> Price </th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th> Product </th>
+                        <th> User </th>
+                        <th> Date </th>
+                        <th> Price </th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for c in commande %}
+                        <tr>
+                            <td> {{ c.produit }} </td>
+                            <td> {{ c.user }} </td>
+                            <td> {{ c.date|date('F d, Y') }} </td>
+                            <td> {{ c.price }} </td>
+                        </tr>
+                    {% endfor %}
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

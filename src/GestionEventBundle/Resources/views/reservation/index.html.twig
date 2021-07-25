@@ -1,0 +1,69 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+              <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Reservations</h1>
+                    <p class="mb-4"><a href="{{ path('reservation_new') }}">Create a new reservation</a></p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                    <tr>
+                                        <th>Datereservation</th>
+                                        <th>Quantite</th>
+                                        <th>Total</th>
+                                        <th>Type</th>
+                                        <th>Seat</th>
+                                        <th>Payer</th>
+                                        <th>Nomreservation</th>
+                                        <th>Iduser</th>
+                                        <th>Idevent</th>
+                                        <th>Id</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for reservation in reservations %}
+                                        <tr>
+                                            <td><a href="{{ path('reservation_show', { 'id': reservation.id }) }}">{{ reservation.datereservation|date("m/d/Y") }}</a></td>
+                                            <td>{{ reservation.quantite }}</td>
+                                            <td>{{ reservation.total }}</td>
+                                            <td>{{ reservation.type }}</td>
+                                            <td>{{ reservation.seat }}</td>
+                                            <td>{{ reservation.payer }}</td>
+                                            <td>{{ reservation.nomreservation }}</td>
+                                            <td>{{ reservation.iduser }}</td>
+                                            <td>{{ reservation.idevent }}</td>
+                                            <td>{{ reservation.id }}</td>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="{{ path('reservation_show', { 'id': reservation.id }) }}">show</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ path('reservation_edit', { 'id': reservation.id }) }}">edit</a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+{% endblock %}

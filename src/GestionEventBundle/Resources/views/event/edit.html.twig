@@ -1,0 +1,35 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+
+<!-- Begin Page Content -->
+            <div class="container-fluid">
+
+
+
+
+                <h1>Event edit</h1>
+
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <input type="submit" value="Edit" />
+                {{ form_end(edit_form) }}
+
+                <ul>
+                    <li>
+                        <a href="{{ path('event_index') }}">Back to the list</a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+{% endblock %}

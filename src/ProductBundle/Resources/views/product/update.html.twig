@@ -1,0 +1,114 @@
+{% extends 'shop.html.twig' %}
+
+
+{% block content %}
+
+
+
+  <!-- Products Section -->
+  <section id="projects" class="projects-section bg-light">
+    <div class="container">
+
+<a href="/show-products"><button type="button" class="btn btn-dark">Go to shop!</button></a>
+<a href="/show-my-products"><button type="button" class="btn btn-dark">Go to my shop</button></a>
+      </br>
+      </br>
+      </br>
+
+      <h1>update product:</h1>
+
+{{ form_start(form) }}
+
+<table>
+  <tbody>
+    <tr>
+      <th>name:</th>
+      <td>{{ form_widget(form.name) }}</td>
+    </tr>
+    <tr>
+      <th>price:</th>
+      <td>{{ form_widget(form.price) }}</td>
+    </tr>
+    <tr>
+      <th>description:</th>
+      <td>{{ form_widget(form.description) }}</td>
+    </tr>
+    <tr>
+      <th>photo:</th>
+      <td>{{ form_widget(form.photo) }}</td>
+    </tr>
+    <tr>
+      <th>promotion:</th>
+      <td><a data-toggle="modal" data-target="#myModal">add a promotion</a></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>{{ form_widget(form.save) }}</td>
+    </tr>
+  </tbody>
+</table>
+ 
+
+<!-- Modal -->
+<div id="myModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Available Promotions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+
+    <table  style="width:100%">
+                <thead>
+                    <tr>
+						
+                        <th>Name</th>
+                        <th>Percentage</th>
+                        <th>Description</th>
+                        <th>Days</th>
+                    </tr>
+                </thead>
+                <tbody>
+                 {% for promotion in promotions %}
+                    <tr>
+					
+                        <td>{{ promotion.name }}</td>
+                        <td>{{ promotion.percentage }}</td>
+						           <td>{{ promotion.description | slice(0, 5) }}</td>
+                        <td>{{ promotion.nbdays }}</td>
+                        <td>
+                            <a href="/apply-promotion/{{ product.id }}/{{ promotion.id }}">Apply</a>
+                           
+                        </td>
+                    </tr>
+                   {% endfor %}
+                </tbody>
+            </table>
+
+
+
+      </div>
+      <div class="modal-footer">
+       
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{ form_end(form) }}
+
+    </div>
+  </section>
+ 
+ 
+
+
+
+
+<br/>
+
+{% endblock %}

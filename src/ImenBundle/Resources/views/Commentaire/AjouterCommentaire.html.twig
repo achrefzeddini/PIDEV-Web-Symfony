@@ -1,0 +1,22 @@
+{% extends 'shop.html.twig' %}
+{% block content %}
+
+
+
+{{ form_start(form) }}
+    <h2 class="text-white mb-5" align="center"> Express yourself .. </h2>
+    <div align="center">
+        <div>
+            {{ form_widget (form.champCommentaire , { 'attr': {'class' : "form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" }}) }}
+        </div>
+        <br>
+        <div class="col-sm-3 mb-3 mb-sm-0" >
+            <a href="/afficherAnnonce?page=1"><input type="submit" class="btn btn-secondary btn-user btn-block" value="Comment"/></a>
+        </div>
+    </div>
+
+{{ form_end(form) }}
+
+
+
+{% endblock %}

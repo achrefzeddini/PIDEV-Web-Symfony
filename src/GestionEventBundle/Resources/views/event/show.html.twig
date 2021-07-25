@@ -1,0 +1,63 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+<!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Event {{ event.titre }}</h1>
+                    <p class="mb-4"></p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <tbody>
+                                    <tr>
+                                        <th>Image</th>
+                                        <td><img src="{{ asset('img/') }}{{ event.image }}" style="max-width: 100px; max-height: 100px;"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>Titre</th>
+                                        <td>{{ event.titre }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nbrplaces</th>
+                                        <td>{{ event.nbrplaces }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Localisation</th>
+                                        <td>{{ event.localisation }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hdebut</th>
+                                        <td>{{ event.hdebut }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hfin</th>
+                                        <td>{{ event.hfin }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Prix</th>
+                                        <td>{{ event.prix }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Idevent</th>
+                                        <td>{{ event.id}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+{% endblock %}

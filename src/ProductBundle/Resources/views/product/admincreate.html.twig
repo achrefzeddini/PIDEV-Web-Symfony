@@ -1,0 +1,60 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block number %} {{ number }} {% endblock %}
+{% block content %}
+
+
+
+  <!-- Products Section -->
+  <section id="projects" class="projects-section bg-light">
+    <div class="container">
+
+<a href="/admin/show"><button type="button" class="btn btn-dark">Back</button></a>
+
+      </br>
+      </br>
+      </br>
+
+      <h1>Create or update product:</h1>
+
+{{ form_start(form) }}
+
+<table>
+  <tbody>
+    <tr>
+      <th>name:</th>
+      <td>{{ form_widget(form.name) }}</td>
+    </tr>
+    <tr>
+      <th>price:</th>
+      <td>{{ form_widget(form.price) }}</td>
+    </tr>
+    <tr>
+      <th>description:</th>
+      <td>{{ form_widget(form.description) }}</td>
+    </tr>
+    <tr>
+      <th>photo:</th>
+      <td>{{ form_widget(form.photo) }}</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>{{ form_widget(form.save) }}</td>
+    </tr>
+  </tbody>
+</table>
+
+{{ form_end(form) }}
+
+    </div>
+  </section>
+ 
+ 
+
+
+
+
+<br/>
+
+{% endblock %}

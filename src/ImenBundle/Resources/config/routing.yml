@@ -1,0 +1,106 @@
+imen_homepage:
+    path:     /
+    defaults: { _controller: ImenBundle:Default:index }
+
+# -----------------------------------------------  ANNONCE ADMIN --------------------------------------------------
+imen_ajouterAnnonce:
+    path:     /ajouterAnnonce
+    defaults: { _controller: ImenBundle:Annonce:ajouterAnnonce }   # nameBundle:nameEntity:methName
+
+imen_afficherAnnonces:
+    path:     /afficherAnnonces
+    defaults: { _controller: ImenBundle:Annonce:afficherAnnonces }
+
+imen_modifierAnnonce:
+    path:     /modifierAnnonce/{id}
+    defaults: { _controller: ImenBundle:Annonce:modifierAnnonce }
+
+imen_supprimerAnnonce:
+    path:     /supprimerAnnonce/{id}
+    defaults: { _controller: ImenBundle:Annonce:supprimerAnnonce }
+# -----------------------------------------------  /ANNONCE ADMIN --------------------------------------------------
+
+
+
+
+
+# -----------------------------------------------  ANNONCE USER --------------------------------------------------
+imen_afficherAnnonce:
+    path:     /afficherAnnonce
+    defaults: { _controller: ImenBundle:Annonce:afficherAnnonce }
+
+imen_afficherMesAnnonces:
+    path:     /afficherMesAnnonces
+    defaults: { _controller: ImenBundle:Annonce:afficherMesAnnonces }
+
+imen_ajouterAnnonceUser:
+    path:     /ajouterAnnonceUser
+    defaults: { _controller: ImenBundle:Annonce:ajouterAnnonceUser }
+
+imen_modifierAnnonceUser:
+    path:     /modifierAnnonceUser/{id}
+    defaults: { _controller: ImenBundle:Annonce:modifierAnnonceUser }
+
+imen_supprimerAnnonceUser:
+    path:     /supprimerAnnonceUser/{id}
+    defaults: { _controller: ImenBundle:Annonce:supprimerAnnonceUser }
+
+
+
+# -----------------------------------------------  /ANNONCE USER --------------------------------------------------
+
+
+
+# -----------------------------------------------  COMMENTAIRE USER --------------------------------------------------
+
+
+imen_commenterAnnonce:
+    path:     /commenterAnnonce/{id}
+    defaults: { _controller: ImenBundle:Annonce:commenterAnnonce }
+
+imen_ajouterCommentaireUser:
+    path:     /ajouterCommentaireUser/{id}
+    defaults: { _controller: ImenBundle:Commentaire:ajouterCommentaireUser }
+
+imen_supprimerCommentaireUser:
+    path:     /supprimerCommentaireUser/{id}
+    defaults: { _controller: ImenBundle:Commentaire:supprimerCommentaireUser }
+
+imen_modifierCommentaireUser:
+    path:     /modifierCommentaireUser/{id}
+    defaults: { _controller: ImenBundle:Commentaire:modifierCommentaireUser }
+
+# -----------------------------------------------  /COMMENTAIRE USER --------------------------------------------------
+
+
+
+
+
+
+# -----------------------------------------------  COMMENTAIRE ADMIN --------------------------------------------------
+imen_ajouterCommentaire:
+    path:     /ajouterCommentaire
+    defaults: { _controller: ImenBundle:Commentaire:ajouterCommentaire }
+
+imen_afficherCommentaires:
+    path:     /afficherCommentaires
+    defaults: { _controller: ImenBundle:Commentaire:afficherCommentaires }
+
+imen_modifierCommentaire:
+    path:     /modifierCommentaire{id}
+    defaults: { _controller: ImenBundle:Commentaire:modifierCommentaire }
+
+imen_supprimerCommentaire:
+    path:     /supprimerCommentaire{id}
+    defaults: { _controller: ImenBundle:Commentaire:supprimerCommentaire }
+# -----------------------------------------------  /COMMENTAIRE ADMIN --------------------------------------------------
+
+
+
+
+
+# FOSUSER BUNDLE
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+# /FOSUSER BUNDLE

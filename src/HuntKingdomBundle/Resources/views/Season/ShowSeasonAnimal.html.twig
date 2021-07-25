@@ -1,0 +1,36 @@
+
+<table border="2">
+<tr>
+    <th> Season </th>
+    <th> Start Time </th>
+    <th> Finish Time </th>
+    <th> Informartion </th>
+    <th colspan="2"> Manage Seasons </th>
+</tr>
+    {% for s in season %}
+        <tr>
+            <td> {{ s.nom }} </td>
+            <td> {{ s.start | date('F d, Y') }} </td>
+            <td> {{ s.finish |date }} </td>
+            <td>
+                <a href="{{ path("hunt_kingdom_updateSeason",{'id':s.id })}}" >
+                    Update </a> </td>
+            <td> <a href="{{ path("hunt_kingdom_deleteSeason",{'id':s.id })}}"> Delete </a> </td>
+        </tr>
+
+    {% endfor %}
+</table>
+<table border="2">
+    <tr>
+        <th> Race </th>
+    </tr>
+    {% for s in season %}
+        {% for a in s.getAnimal() %}
+        <tr>
+            <td>{{a.race}}</td>
+        </tr>
+        {% endfor %}
+    {% endfor %}
+</table>
+
+

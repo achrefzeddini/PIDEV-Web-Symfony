@@ -1,0 +1,4 @@
+services:
+#    hunt_kingdom.example:
+#        class: HuntKingdomBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

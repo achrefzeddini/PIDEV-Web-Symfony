@@ -1,0 +1,25 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+
+<h1> Update Animal</h1>
+     {{ form_start(form) }}
+     Race:   <div class="col-sm-6 mb-3 mb-sm-0">
+        {{ form_widget (form.race , { 'attr': {'class' : "form-control form-control-user" }}) }} </div>
+     Season:  <div class="col-sm-6 mb-3 mb-sm-0">
+        {{ form_widget (form.saison , { 'attr': {'class' : "form-control form-control-user" }}) }} </div>
+     Place:  <div class="col-sm-6 mb-3 mb-sm-0">
+            {{ form_widget (form.place , { 'attr': {'class' : "form-control form-control-user" }}) }} </div>
+     Image:  <div class="col-sm-6 mb-3 mb-sm-0">
+                {{ form_widget (form.image , { 'attr': {'class' : "form-control form-control-user" }}) }} </div>
+     Reference:  <div class="col-sm-6 mb-3 mb-sm-0">
+         {{ form_widget (form.idA , { 'attr': {'class' : "form-control form-control-user"}}) }} </div>
+     Hunted:  <div class="col-sm-6 mb-3 mb-sm-0">
+     {{ form_widget (form.hunted , { 'attr': {'class' : "form-control form-control-user"}}) }} </div>
+
+
+
+     <br>
+     <div class="col-sm-3 mb-3 mb-sm-0" >
+          <input type="submit" class="btn btn-secondary btn-user btn-block" value="Update"/> </div>
+     {{ form_end(form) }}
+{% endblock %}
